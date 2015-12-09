@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+
+<head>
+<link href="f1.css" rel="stylesheet" type="text/css">
+<script src='jquery-1.10.2.js' language="JavaScript" type="text/javascript"></script>
+
+<script src="smooth-scroll-master/dist/js/bind-polyfill.js"></script>
+<script src="smooth-scroll-master/dist/js/smooth-scroll.js"></script>
+<script>
+   
+	
+    $(document).ready(function () {
+        window.scrollTo(0,0);
+    });
+	
+	function sam()
+	{
+	var name=$('#name').val();
+	if(name=="")
+	{
+	   alert("Please enter your name.");
+	}
+	else
+	{
+	    smoothScroll.init();
+	   console.log(name);
+	   $('#point2').css('display','block');
+	}
+	}
+	$("#q1").on('click',function(){
+	   $('#i1').css({'display':'none'});
+	   var text=$('#i1').text();
+	   console.log(text);
+	   $('#q1').css('display','none');
+	   
+	});
+</script>
+</head>
+<body bgcolor='#130800'>
+<script>
+$(window).bind("load", function() {
+   var ww = $(window).width();
+	console.log(ww);
+	ww=ww-10;
+	var wid=ww+'px';
+	$("#head").css('width', wid);
+});
+function sam2(){
+
+	   
+	   var text=$('#i1').val();
+	   if(text=="")
+	   {
+	     alert("Please don't leave a field empty.");
+		}
+		else
+		{
+	   $('#sent_confirm').css('display','block');
+	   $('#i1').remove();
+	   console.log(text);
+	   $('#q1').remove();
+	   $('<a data-scroll />')
+	   .attr('href','#bazinga2')
+	   .html("<img src='next.jpg' style='height:80px;width:137px;margin-left:20px;' />")
+	   .attr('onClick',"javascript:sam3(); return false;")
+	   .appendTo('#point2');
+	   }
+	   
+	}
+	function sam3()
+	{
+	$('#point3').css('display','block');
+	
+	}
+	function sam4(){
+
+	   
+	   var text2=$('#i2').val();
+	   if(text2=="")
+	   {
+	     alert("Please don't leave a field empty.");
+		}
+		else
+		{
+	   $('#sent_confirm2').css('display','block');
+	   $('#i2').remove();
+	   console.log(text2);
+	   $('#q2').remove();
+	   $('<a data-scroll />')
+	   .attr('href','#bazinga3')
+	   .html("<img src='next.jpg' style='height:80px;width:137px;margin-left:20px;' />")
+	   .attr('onClick',"javascript:sam5(); return false;")
+	   .appendTo('#point3');
+	 }
+	   
+	}
+	function sam5()
+	{
+	console.log("sam5");
+	$('#point4').css('display','block');
+	
+	}
+	function sam6()
+	{
+	    var i,count=0;
+		$('#point5').css('display','block');
+		var start = new Date;
+
+		i=setInterval(function() {
+		    var m=(new Date - start) / 1000;
+			m=Math.round(m);
+			if(m>=8)
+			{
+			   start=new Date;
+			}
+			
+			    $('#time').text(m+ " s.");
+			
+		}, 1000);
+		
+    
+		var text_input = document.getElementById ('quick1');
+		text_input.focus ();
+		text_input.select ();
+		var s1=setTimeout(function(){
+		 var t1=$('#quick1').val();
+		 console.log(t1);
+		 $('#quick1').val("");
+		 $('#word').text("Next word: friends");
+		 setTimeout(function(){
+		 var t2=$('#quick1').val();
+		 console.log(t2);
+		$('#quick1').val("");
+		 $('#word').text("Next word: VNIT Nagpur");
+		 setTimeout(function(){
+		 var t3=$('#quick1').val();
+		 console.log(t3);
+		 $('#quick1').val("");
+		 $('#word').text("Next word: AXIS 2014");
+		 setTimeout(function(){
+		 var t4=$('#quick1').val();
+		 console.log(t4);
+		 $('#quick1').val("");
+		 $('#word').text("Next word: DEXTER");
+		 setTimeout(function(){
+		 var t5=$('#quick1').val();
+		 console.log(t5);
+		 $('#quick1').val("");
+		 $('#word').text("Time up! Fun, wasn't it? Click next to move ahead.");
+		 $('#instruct').remove();
+		 $('#quick1').remove();
+		 $('<a data-scroll />')
+	   .attr('href','#bazinga5')
+	   .html("<img src='next.jpg' style='height:80px;width:137px;margin-left:560px;' />")
+	   .attr('onClick',"javascript:sam7(); return false;")
+	   .appendTo('#point5');
+	      $('#time').remove();
+		  clearInterval(i);
+		}, 8000);
+		}, 8000);
+		}, 8000);
+		}, 8000);
+		}, 8000);
+		
+	}
+	function sam7()
+	{
+	$('#point6').css('display','block');
+	
+	}
+	function sam8(){
+     var text3=$('#i3').val();
+	 var array=text3.split(" ");
+	 var len=array.length;
+	 if(len<30)
+	 {
+	    $('#shinchan').attr('src','s2.jpg');
+	 }
+	 else
+	 {
+	    $('#i3').remove();
+		$("#q3").remove();
+		$("#final").css({'display':'block'});
+		$('#shinchan').attr('src','s3.jpg');
+		$('#shinchan').css('margin-left','10px');
+		$('#okay').remove();
+	 }
+	
+	}
+	function sam9()
+	{
+	  $('#point7').css('display','block');
+	}
+</script>
+<img src="header.jpg" id="head" style="" />
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">Hey guys! A warm hello from the Axis 14 team! We have for you a short walk down the memory lane that will help us improve Dexter in the following years.</h3>
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">Enter your name and click on the pensieve to start. For the Muggles, click on the weird shiny image.<img src="128540.png" style="width:35px;height:35px;" /></h3>
+<input autofocus style="margin-left:480px;width:300px;height:30px;" id="name" type="text" placeholder="Your name here.." />
+<br />
+<br />
+
+<a onClick="javascript:sam(); return false;" data-scroll href="#bazinga"><img src="m7.jpg" style="margin-left:400px;height:250px;width:500px;" /> </a>
+
+<div id="point2" style="height:680px;display:none;">
+<img src="m1.jpg" style="margin-left:400px;height:280px;margin-top:40px;width:400px;" />
+<br />
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">After the gruelling First Round, we're sure you can sympathise with this guy. <img src="2.jpg" style="width:35px;height:35px;" /></h3>
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">What message would you convey to the person who set the questions for the First Round?</h3>
+<br />
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">(Here's your opportunity. Type away!)</h3>
+<textarea type="text" id="i1" placeholder="Your message to the paper setter here.." style="width:500px;height:80px;margin-left:8px;" ></textarea>
+<button id="q1" onclick="sam2()" style="vertical-align:top;">Send</button>
+<h4 id="sent_confirm" style="display:none;font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">Message sent. Click next to move ahead.</h4>
+</div>
+<span id="bazinga"></span>
+<div id="point3" style="height:640px;display:none;">
+<img src="m2.jpg" style="margin-left:400px;height:280px;width:400px;" />
+<br />
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">You will think twice before filling out a form that starts with 'We want to know a little about you.' Who knows to what use that information will be put to? We assure no harm would come of it. <img src="128540.png" style="width:35px;height:35px;" /></h3>
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">So, how was the college ambience? Did you face any problems? (Please bring to our notice anything you believe we can improve upon.)</h3>
+<br />
+<textarea type="text" id="i2" placeholder="Your answer here.." style="width:500px;height:80px;margin-left:8px;" ></textarea>
+<button id="q2" onclick="sam4()" style="vertical-align:top;">Submit</button>
+<h4 id="sent_confirm2" style="display:none;font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">Message sent. Click next to move ahead.</h4>
+</div>
+<span id="bazinga2"></span>
+<div id="point4" style="height:650px;display:none;">
+<img src="m3.jpg" style="margin-left:400px;height:280px;width:400px;" />
+<h3 style="font-family:'Ubuntu';text-align:center;margin-left:8px;margin-right:5px;color:white;">You will never look at this in the same way as you used to.<img src="2.jpg" style="width:35px;height:35px;" /></h3>
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">This was a speed round in Dexter. Let's have another go at the game. We'll give you a single word and you have to type the first thing that comes to your mind. The word you type can be from any language (make sure it's supported by Unicode :D) and don't worry about spelling mistakes. Remember though, you get no more than eight seconds to think for each word. We'll figure it out. Hit ready when you are ready.<img src="2.jpg" style="width:35px;height:35px;" /></h3>
+
+<a onClick="javascript:sam6();return false;" data-scroll href="#bazinga4" style="margin-left:505px;"><img src='ready.png' style="height:100px;cursor:pointer;" /></a>
+</div>
+<span id="bazinga3"></span>
+<br />
+<div id="point5" style="height:640px;display:none;">
+<div style="height:150px;"></div>
+<h3 style="font-family:'Ubuntu';text-align:center;margin-left:8px;margin-right:5px;color:white;" id="instruct">Tick-Tock! Your time starts now. Type as soon as you can!</h3>
+<h3 style="font-family:'Ubuntu';text-align:center;margin-left:8px;margin-right:5px;color:white;" id="word">Word: Home</h3>
+
+<input style="margin-left:480px;width:300px;height:30px;" id="quick1" type="text" />
+<span id="time" style="color:white;font-family:'Ubuntu';margin-left:5px;"></span>
+</div>
+<span id="bazinga4"></span>
+<div id="point6" style="display:none;height:640px">
+<img src="m4.JPG" style="margin-left:400px;height:280px;width:400px;" />
+<h3 style="font-family:'Ubuntu';text-align:center;margin-left:8px;margin-right:5px;color:white;">We reckon you will never take a nap at a desk which has a cupboard behind it.<img src="128540.png" style="width:35px;height:35px;" />  <img src="2.jpg" style="width:35px;height:35px;" /></h3>
+<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">There is this guy who had a question about Dexter. We think you'll be able to answer him. However, he loves to read so make sure you write more than 30 words. Help us out!</h3>
+<br />
+<br />
+<br />
+<a onClick="javascript:sam9(); return false;" id="okay" data-scroll href="#bazinga5"><img src='okay.jpg' style="width:262px;margin-left:488px;" /></a>
+</div>
+<span id="bazinga5"></span>
+<div id="point7" style="display:none;height:640px;">
+<span><img id="shinchan" src="s1.jpg" style="float:left;" /></span><span><textarea type="text" id="i3" placeholder="Your answer here.." style="width:600px;height:100px;vertical-align:sub;" ></textarea><button id="q3" onclick="sam8()" style="vertical-align:bottom;">Submit</button></span>
+
+<span id="bazinga6"></span>
+<h1 id="final" style="font-family:'Ubuntu';text-align:center;display:none;margin-left:8px;margin-right:5px;color:white;"> Your answers will help us assess any difficulties and improve Dexter in the coming years the years. Hope you had a few laughs and a fun break. Thank you so much! See you next year! <img src="m5.png" style="width:35px;height:35px;" /></h1>
+</div>
+</body>
+</html>
