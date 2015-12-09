@@ -24,6 +24,35 @@
 </head>
 <body bgcolor='#130800'>
 <script>
+var tour = new Tour({
+	template:"<div class='popover tour'><div class='arrow'></div><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'></div></div>",
+	  steps: [
+	  {
+		element: "#intro",
+		title: "Dexter, Axis'14",
+		placement: "top",
+		content: "Dexter was an event in our college's annual technical festival that invited school students to the college and tested their dexterity. This was a feedback form for them after the event. You mustn't have seen anything quite like it."
+	  },
+	  {
+		element: "#round1",
+		title: "Round 1 Dexter",
+		placement: "right",
+		content: "This was a written round conducted in many cities containing brain teasers and out of ordinary questions."
+	  },
+	  {
+		element: "#form",
+		title: "Get-to-know-you forms",
+		placement: "right",
+		content: "We had asked the students to fill in a form with basic questions about them before the event. Then, we made questions for each student according to his/her answers in that form."
+	  }
+	],
+	onStart: function (tour) {console.log("started");}
+	});
+	tour.init(true);
+
+// Start the tour
+tour.start(true);
+
 var text,text2,t1,t2,t3,t4,t5,text3,name;
 function sam()
 	{
@@ -36,6 +65,7 @@ function sam()
 	{
 	    smoothScroll.init();
 	   console.log(name);
+	   tour.next();
 	   $('#point2').css('display','block');
 	}
 	}
@@ -62,6 +92,7 @@ $(window).bind("load", function() {
 		}
 		else
 		{
+		
 		   $('#sent_confirm').css('display','block');
 		   $('#i1').remove();
 		   console.log(text);
@@ -76,6 +107,7 @@ $(window).bind("load", function() {
 	}
 	function sam3()
 	{
+	tour.next();
 	$('#point3').css('display','block');
 	
 	}
@@ -275,7 +307,7 @@ $(window).bind("load", function() {
 	
 </script>
 <img src="header.jpg" id="head" style="" />
-<h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">Hey guys! A warm hello from the Axis 14 team! We have for you a short walk down the memory lane that will help us improve Dexter in the following years.</h3>
+<h3 id="intro" style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">Hey guys! A warm hello from the Axis 14 team! We have for you a short walk down the memory lane that will help us improve Dexter in the following years.</h3>
 <h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">Enter your name and click on the pensieve to start. For the Muggles, click on the weird shiny image.<img src="128540.png" style="width:35px;height:35px;" /></h3>
 <input autofocus style="margin-left:480px;width:300px;height:30px;" id="name" type="text" placeholder="Your name here.." />
 <br />
@@ -284,9 +316,9 @@ $(window).bind("load", function() {
 <a onClick="javascript:sam(); return false;" data-scroll href="#bazinga"><img src="m7.jpg" style="margin-left:400px;height:250px;width:500px;" /> </a>
 
 <div id="point2" style="height:680px;display:none;">
-<img src="m1.jpg" style="margin-left:400px;height:280px;margin-top:40px;width:400px;" />
+<img src="m1.jpg" id="round1" style="margin-left:400px;height:280px;margin-top:40px;width:400px;" />
 <br />
-<h3 id="round1" style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">After the gruelling First Round, we're sure you can sympathise with this guy. <img src="2.jpg" style="width:35px;height:35px;" /></h3>
+<h3  style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">After the gruelling First Round, we're sure you can sympathise with this guy. <img src="2.jpg" style="width:35px;height:35px;" /></h3>
 <h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">What message would you convey to the person who set the questions for the First Round?</h3>
 <br />
 <h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;">(Here's your opportunity. Type away!)</h3>
@@ -296,9 +328,9 @@ $(window).bind("load", function() {
 </div>
 <span id="bazinga"></span>
 <div id="point3" style="height:640px;display:none;">
-<img src="m2.jpg" style="margin-left:400px;height:280px;width:400px;" />
+<img src="m2.jpg" id="form" style="margin-left:400px;height:280px;width:400px;" />
 <br />
-<h3 id="form" style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">You will think twice before filling out a form that starts with 'We want to know a little about you.' Who knows to what use that information will be put to? We assure no harm would come of it. <img src="128540.png" style="width:35px;height:35px;" /></h3>
+<h3  style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">You will think twice before filling out a form that starts with 'We want to know a little about you.' Who knows to what use that information will be put to? We assure no harm would come of it. <img src="128540.png" style="width:35px;height:35px;" /></h3>
 <h3 style="font-family:'Ubuntu';margin-left:8px;margin-right:5px;color:white;line-height:150%;">So, how was the college ambience? Did you face any problems? (Please bring to our notice anything you believe we can improve upon.)</h3>
 <br />
 <textarea type="text" id="i2" placeholder="Your answer here.." style="width:500px;height:80px;margin-left:8px;" ></textarea>
@@ -340,32 +372,6 @@ $(window).bind("load", function() {
 <span id="bazinga6"></span>
 <h1 id="final" style="font-family:'Ubuntu';text-align:center;display:none;margin-left:8px;margin-right:5px;color:white;"> Your answers will help us assess any difficulties and improve Dexter in the coming years the years. Hope you had a few laughs and a fun break. Thank you so much! <img src="m5.png" style="width:35px;height:35px;" /></h1>
 </div>
-<script>
-console.log("yo");
-var tour = new Tour({
-	  steps: [
-	  {
-		element: "#head",
-		title: "Dexter, Axis'14",
-		content: "Dexter was an event in our college's annual technical festival that invited school students to the college and tested their dexterity. This was a feedback form for them after the event. You mustn't have seen anything quite like it."
-	  },
-	  {
-		element: "#round1",
-		title: "Round 1 Dexter",
-		content: "This was a written round conducted in many cities containing brain teasers."
-	  },
-	  {
-		element: "#form",
-		title: "Get-to-know-you forms",
-		content: "We had asked the students to fill in a formwith basic questions about them before the event. Then, we made questions for each student according to their answers in that form."
-	  }
-	],
-	onStart: function (tour) {console.log("started");}
-	});
-	tour.init(true);
 
-// Start the tour
-tour.start(true);
-</script>
 </body>
 </html>
