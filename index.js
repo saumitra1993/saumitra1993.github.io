@@ -138,7 +138,7 @@ app.filter('trusted', ['$sce', function ($sce) {
     };
 }]);
 	
-angular.module('app').config(function($sceDelegateProvider) {
+app.config(function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist(['**']);
 });
 
