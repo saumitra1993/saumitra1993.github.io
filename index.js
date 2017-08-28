@@ -137,6 +137,10 @@ app.filter('trusted', ['$sce', function ($sce) {
         return $sce.trustAsResourceUrl(url);
     };
 }]);
+	
+angular.module('app').config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist(['**']);
+});
 
 app.directive('commitEleven',function(){
   return {
