@@ -132,6 +132,11 @@ app.directive('https://cdn.rawgit.com/saumitra1993/gitblogpost/master/commitTen'
       }
     };
   });
+app.filter('trusted', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}]);
 
 app.directive('commitEleven',function(){
   return {
