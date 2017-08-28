@@ -125,7 +125,7 @@ app.directive('commitNine',function(){
 app.directive('https://cdn.rawgit.com/saumitra1993/gitblogpost/master/commitTen',function(){
   return {
     restrict:'E',
-    templateUrl:'3e694.html',
+    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/3e694.html',
     scope:false,
     link:function(scope,element){
      
