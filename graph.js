@@ -30,17 +30,17 @@ var cy = cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: '10', title: "Improved conclusion. Article looks satisfactory, I guess." }},
-      { data: { id: '9', title: "Removed all the extra content and explained the point more clearly." }},
-      { data: { id: '8', title: "iphonecomment: Completed the content" }},
-      { data: { id: '7', title: "iphonecomment: Merge branch 'realExamples' into iphonecomment" }},
-      { data: { id: '6', title: "iphonecomment: Finally got a way to reach the point" }},
-      { data: { id: '5', title: "realExample: Added example that doesn't quite drive the point home" }},
-      { data: { id: '4', title: "Updated git explanation with relevant terms" }},
-      { data: { id: '3', title: "realExample: started out with a real life example to illustrate how git can be used for all data requirements in general" }},
-      { data: { id: '2', title: "Git workflow explained" }},
-      { data: { id: '1', title: "Set the context of discussion" }},
-      { data: { id: '0', title: "Article text file added with theme text." }}
+      { data: { id: '10'}, scratch: {title10: "Improved conclusion. Article looks satisfactory, I guess."}},
+      { data: { id: '9'}, scratch: {title9: "Removed all the extra content and explained the point more clearly."}},
+      { data: { id: '8'}, scratch: {title8: "iphonecomment: Completed the content" }},
+      { data: { id: '7'}, scratch: {title7: "iphonecomment: Merge branch 'realExamples' into iphonecomment" }},
+      { data: { id: '6'}, scratch: {title6: "iphonecomment: Finally got a way to reach the point" }},
+      { data: { id: '5'}, scratch: {title5: "realExample: Added example that doesn't quite drive the point home" }},
+      { data: { id: '4'}, scratch: {title4: "Updated git explanation with relevant terms" }},
+      { data: { id: '3'}, scratch: {title3: "realExample: started out with a real life example to illustrate how git can be used for all data requirements in general" }},
+      { data: { id: '2'}, scratch: {title2: "Git workflow explained" }},
+      { data: { id: '1'}, scratch: {title1: "Set the context of discussion" }},
+      { data: { id: '0'}, scratch: {title0: "Article text file added with theme text."}}
     ],
     edges: [
       { data: { source: '9' , target:'10'} },
@@ -69,7 +69,7 @@ cy.on('tap', 'node', function(){
 }); // on tap
 
 cy.elements().qtip({
-					content: function(){ return this.attr("label") },
+					content: function(){ return cy.scratch( "title" + this.attr("id")) },
 					position: {
 						my: 'top center',
 						at: 'bottom center'
