@@ -74,9 +74,6 @@ cy.elements().qtip({
 						my: 'top center',
 						at: 'bottom center'
 					},
-          show: {
-            event: 'mouseenter'
-          },
 					style: {
 						classes: 'qtip-bootstrap',
 						tip: {
