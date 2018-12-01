@@ -1,4 +1,3 @@
-// photos from flickr with creative commons license
 
 var cy = cytoscape({
   container: document.getElementById('diagram'),
