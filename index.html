@@ -14,6 +14,9 @@
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.21/cytoscape.min.js"></script>
 	</head>
 	<style>
 	#content {
@@ -108,9 +111,9 @@
 		<br />
 		<div class="row">
 
-		<div id="diagram" class="col-md-6" style="margin-top: 46px;padding-top: 20px;">
+		<div id="diagram" class="col-md-6 col-xs-12" style="margin-top: 46px;padding-top: 20px;">
 
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-offset-3" style="font-weight:bold;">Master</div>
 
 				<div ng-class="{'selected': commit[10] == 1}" ng-click="show(10)" class="node col-md-1 col-md-offset-3" data-toggle="tooltip" data-placement="top" title="Improved conclusion. Article looks satisfactory, I guess.">
@@ -149,10 +152,10 @@
 			</div>
 
 			<div class="row">
-				<div class="edge" style="margin-left:45.4%">     <!--SECOND EDGE TO BE ADDED -->
+				<div class="edge" style="margin-left:45.4%">
 				</div>
 
-				<div class="line3" style="margin-left:46.4%">     <!--SECOND EDGE TO BE ADDED -->
+				<div class="line3" style="margin-left:46.4%">     
 				</div>
 			</div>
 
@@ -209,7 +212,7 @@
 			<div class="row">
 				<div ng-class="{'selected': commit[0] == 1}" ng-click="show(0)" class="node col-md-1 col-md-offset-3" data-toggle="tooltip" data-placement="top" title="Article text file added with theme text.">
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 		<div id="content" >
@@ -224,7 +227,7 @@
 			<commit-nine ng-show="commit[8]==1"></commit-nine>
 			<commit-ten ng-show="commit[9]==1"></commit-ten>
 			<commit-eleven ng-show="commit[10]==1"></commit-eleven>
-
+      <br />
 		</div>
 	</div>
 		<script>
@@ -233,5 +236,6 @@
 			})
 		</script>
 		<script src="index.js"></script>
+    <script src="graph.js"></script>
 	</body>
 </html>

@@ -21,6 +21,8 @@ app.controller("versionController", function($scope){
 
   };
 
+  window.show = $scope.show;
+
 });
 
 app.directive('commitOne',function(){
