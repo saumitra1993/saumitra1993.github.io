@@ -86,7 +86,7 @@ cy.elements().qtip({
 cy.layout({
   name: 'dagre',
   // dagre algo options, uses default value on undefined
-  nodeSep: 10, // the separation between adjacent nodes in the same rank
+  nodeSep: 30, // the separation between adjacent nodes in the same rank
   edgeSep: undefined, // the separation between adjacent edges in the same rank
   rankSep: undefined, // the separation between adjacent nodes in the same rank
   rankDir: 'BT', // 'TB' for top to bottom flow, 'LR' for left to right,
