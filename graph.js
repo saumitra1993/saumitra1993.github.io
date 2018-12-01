@@ -22,7 +22,7 @@ var cy = cytoscape({
         'target-arrow-shape': 'triangle',
         'line-color': '#ffaaaa',
         'target-arrow-color': '#ffaaaa'
-      }),
+      })
     .selector('.selected')
       .css({
         'background-color': '#fff'
