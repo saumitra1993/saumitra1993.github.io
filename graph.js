@@ -104,8 +104,8 @@ var options = {
   nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
   spacingFactor: undefined, // Applies a multiplicative factor (>0) to expand or compress the overall area that the nodes take up
   condense: false, // uses all available space on false, uses minimal space on true
-  rows: undefined, // force num of rows in the grid
-  cols: undefined, // force num of columns in the grid
+  rows: 10, // force num of rows in the grid
+  cols: 2, // force num of columns in the grid
   position: function( node ){}, // returns { row, col } for element
   sort: function(a, b){ return parseInt($(a).attr("id")) - parseInt($(b).attr("id")) }, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
   animate: false, // whether to transition the node positions
