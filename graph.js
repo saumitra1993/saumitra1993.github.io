@@ -92,7 +92,6 @@ cy.$('#0').qtip({
     classes: 'qtip-bootstrap'
   }
 });
-cytoscape.use( dagre );
 
 var options = {
   name: 'grid',
