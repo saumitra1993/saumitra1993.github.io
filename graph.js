@@ -69,16 +69,19 @@ cy.on('tap', 'node', function(){
 }); // on tap
 
 cy.elements().qtip({
-					content: function(){ return cy.scratch( "title" + this.attr("id")) },
+					content: function(){ this.scratch()["title" + this.attr("id")] },
 					position: {
 						my: 'top center',
 						at: 'bottom center'
 					},
+          show: {
+            event: 'mouseenter'
+          },
 					style: {
 						classes: 'qtip-bootstrap',
 						tip: {
-							width: 100,
-							height: 30
+							width: 50,
+							height: 10
 						}
 					}
 				});
