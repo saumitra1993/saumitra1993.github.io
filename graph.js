@@ -23,6 +23,10 @@ var cy = cytoscape({
         'line-color': '#ffaaaa',
         'target-arrow-color': '#ffaaaa'
       }),
+    .selector('.selected')
+      .css({
+        'background-color': '#fff'
+      }),
 
   elements: {
     nodes: [
@@ -57,7 +61,6 @@ var cy = cytoscape({
 cy.on('tap', 'node', function(){
   var nodes = this;
   var tapped = nodes;
-  var food = [];
 
   nodes.addClass('selected');
   angular.element(document.getElementById('body')).scope().show(nodes.attr("id"));
@@ -69,8 +72,7 @@ cy.$('#0').qtip({
   content: 'Article text file added with theme text.',
   position: {
     my: 'top center',
-    at: 'bottom center',
-    target: 'mouse'
+    at: 'bottom center'
   },
   show: {
         event: 'mouseenter', // Show on mouse over by default
@@ -92,30 +94,6 @@ cy.$('#0').qtip({
     classes: 'qtip-bootstrap'
   }
 });
-
-var options = {
-  name: 'grid',
-
-  fit: true, // whether to fit the viewport to the graph
-  padding: 30, // padding used on fit
-  boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-  avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
-  avoidOverlapPadding: 10, // extra spacing around nodes when avoidOverlap: true
-  nodeDimensionsIncludeLabels: false, // Excludes the label when calculating node bounding boxes for the layout algorithm
-  spacingFactor: undefined, // Applies a multiplicative factor (>0) to expand or compress the overall area that the nodes take up
-  condense: false, // uses all available space on false, uses minimal space on true
-  rows: 10, // force num of rows in the grid
-  cols: 2, // force num of columns in the grid
-  position: function( node ){}, // returns { row, col } for element
-  sort: function(a, b){ return parseInt($(a).attr("id")) - parseInt($(b).attr("id")) }, // a sorting function to order the nodes; e.g. function(a, b){ return a.data('weight') - b.data('weight') }
-  animate: false, // whether to transition the node positions
-  animationDuration: 500, // duration of animation in ms if enabled
-  animationEasing: undefined, // easing of animation if enabled
-  animateFilter: function ( node, i ){ return true; }, // a function that determines whether the node should be animated.  All nodes animated by default on animate enabled.  Non-animated nodes are positioned immediately when the layout starts
-  ready: undefined, // callback on layoutready
-  stop: undefined, // callback on layoutstop
-  transform: function (node, position ){ return position; } // transform a given node position. Useful for changing flow direction in discrete layouts
-};
 
 cy.layout({
   name: 'dagre',
