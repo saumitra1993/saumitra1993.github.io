@@ -69,7 +69,7 @@ cy.on('tap', 'node', function(){
 }); // on tap
 
 cy.elements().qtip({
-					content: function(){ this.scratch()["title" + this.attr("id")] },
+					content: function(){ return this.scratch()["title" + this.attr("id")] },
 					position: {
 						my: 'top center',
 						at: 'bottom center'
