@@ -66,8 +66,8 @@ cy.on('tap', 'node', function(){
   var food = [];
 
   nodes.addClass('selected');
-
-  window.show(nodes.attr(id));
+  angular.element(document.getElementById('body')).scope().show(nodes.attr("id"));
+  angular.element(document.getElementById('body')).scope().$apply();
 
 }); // on tap
 
