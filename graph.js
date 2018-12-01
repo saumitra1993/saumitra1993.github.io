@@ -61,7 +61,7 @@ var cy = cytoscape({
 cy.on('tap', 'node', function(){
   var nodes = this;
   var tapped = nodes;
-
+  this.absoluteComplement().removeClass('selected');
   nodes.addClass('selected');
   angular.element(document.getElementById('body')).scope().show(nodes.attr("id"));
   angular.element(document.getElementById('body')).scope().$apply();
