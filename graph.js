@@ -30,17 +30,17 @@ var cy = cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: '10' } },
-      { data: { id: '9' } },
-      { data: { id: '8' } },
-      { data: { id: '7' } },
-      { data: { id: '6' } },
-      { data: { id: '5' } },
-      { data: { id: '4' } },
-      { data: { id: '3' } },
-      { data: { id: '2' } },
-      { data: { id: '1' } },
-      { data: { id: '0' } }
+      { data: { id: '10', title: "Improved conclusion. Article looks satisfactory, I guess." }},
+      { data: { id: '9', title: "Removed all the extra content and explained the point more clearly." }},
+      { data: { id: '8', title: "iphonecomment: Completed the content" }},
+      { data: { id: '7', title: "iphonecomment: Merge branch 'realExamples' into iphonecomment" }},
+      { data: { id: '6', title: "iphonecomment: Finally got a way to reach the point" }},
+      { data: { id: '5', title: "realExample: Added example that doesn't quite drive the point home" }},
+      { data: { id: '4', title: "Updated git explanation with relevant terms" }},
+      { data: { id: '3', title: "realExample: started out with a real life example to illustrate how git can be used for all data requirements in general" }},
+      { data: { id: '2', title: "Git workflow explained" }},
+      { data: { id: '1', title: "Set the context of discussion" }},
+      { data: { id: '0', title: "Article text file added with theme text." }}
     ],
     edges: [
       { data: { source: '9' , target:'10'} },
@@ -68,32 +68,20 @@ cy.on('tap', 'node', function(){
 
 }); // on tap
 
-cy.$('#0').qtip({
-  content: 'Article text file added with theme text.',
-  position: {
-    my: 'top center',
-    at: 'bottom center'
-  },
-  show: {
-        event: 'mouseenter', // Show on mouse over by default
-        effect: true, // Use default 90ms fade effect
-        delay: 90, // 90ms delay before showing
-        solo: false, // Do not hide others when showing
-        ready: false, // Do not show immediately
-    },
-    hide: {
-        event: 'mouseleave', // Hide on mouse out by default
-        effect: true, // Use default 90ms fade effect
-        delay: 0, // No hide delay by default
-        fixed: false, // Non-hoverable by default
-        inactive: false, // Do not hide when inactive
-        leave: 'window', // Hide when we leave the window
-        distance: false // Don't hide after a set distance
-    },
-  style: {
-    classes: 'qtip-bootstrap'
-  }
-});
+cy.elements().qtip({
+					content: function(){ return this.attr("label") },
+					position: {
+						my: 'top center',
+						at: 'bottom center'
+					},
+					style: {
+						classes: 'qtip-bootstrap',
+						tip: {
+							width: 100,
+							height: 30
+						}
+					}
+				});
 
 cy.layout({
   name: 'dagre',
