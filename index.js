@@ -9,9 +9,9 @@ app.controller("versionController", function($scope){
     $scope.commit[i] = 0;
   }
   $scope.commit[10] = 1;
-	
+
   $scope.show = function(n){
-    
+
     for(var i=0;i<11;i++){
       $scope.commit[i] = 0;
       if(i==n){
@@ -26,10 +26,10 @@ app.controller("versionController", function($scope){
 app.directive('commitOne',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/7e6e8.html',
+    templateUrl:'7e6e8.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -37,10 +37,10 @@ app.directive('commitOne',function(){
 app.directive('commitTwo',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/b13f8.html',
+    templateUrl:'b13f8.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -48,10 +48,10 @@ app.directive('commitTwo',function(){
 app.directive('commitThree',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/e89bc.html',
+    templateUrl:'e89bc.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -59,10 +59,10 @@ app.directive('commitThree',function(){
 app.directive('commitFour',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/5acd8.html',
+    templateUrl:'5acd8.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -70,10 +70,10 @@ app.directive('commitFour',function(){
 app.directive('commitFive',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/561e5.html',
+    templateUrl:'561e5.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -81,10 +81,10 @@ app.directive('commitFive',function(){
 app.directive('commitSix',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/e1c9f.html',
+    templateUrl:'e1c9f.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -92,10 +92,10 @@ app.directive('commitSix',function(){
 app.directive('commitSeven',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/3fa59.html',
+    templateUrl:'3fa59.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -103,10 +103,10 @@ app.directive('commitSeven',function(){
 app.directive('commitEight',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/77c3c.html',
+    templateUrl:'77c3c.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -114,21 +114,21 @@ app.directive('commitEight',function(){
 app.directive('commitNine',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/f8d86.html',
+    templateUrl:'f8d86.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
 
-app.directive('https://cdn.rawgit.com/saumitra1993/gitblogpost/master/commitTen',function(){
+app.directive('commitTen',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/3e694.html',
+    templateUrl:'3e694.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
@@ -137,7 +137,7 @@ app.filter('trusted', ['$sce', function ($sce) {
         return $sce.trustAsResourceUrl(url);
     };
 }]);
-	
+
 app.config(function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist(['**']);
 });
@@ -145,10 +145,10 @@ app.config(function($sceDelegateProvider) {
 app.directive('commitEleven',function(){
   return {
     restrict:'E',
-    templateUrl:'https://cdn.rawgit.com/saumitra1993/gitblogpost/master/3ffd9.html',
+    templateUrl:'3ffd9.html',
     scope:false,
     link:function(scope,element){
-     
+
       }
     };
   });
